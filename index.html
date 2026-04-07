@@ -78,19 +78,19 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       color: #fff;
       font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
       font-weight: 600;
       letter-spacing: 0.06em;
-      font-size: 1.1rem;
+      font-size: 1.14rem;
       line-height: 1;
     }
 
     .brand img {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       object-fit: cover;
       display: block;
     }
@@ -252,6 +252,16 @@
     .three-cats {
       background: #fcfaf7;
       border-bottom: 1px solid #f0ebe3;
+    }
+
+    .three-cats-title {
+      margin: 0 0 40px;
+      text-align: center;
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      line-height: 1.04;
+      font-weight: 600;
+      color: #26262b;
+      letter-spacing: -0.035em;
     }
 
     .three-cats-grid {
@@ -598,12 +608,14 @@
 
     /* Seamless Checkout */
     .checkout-showcase {
-      background: #f6f3ee;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.85), rgba(246,243,238,0) 34%),
+        #f6f3ee;
       padding: 74px 0 86px;
     }
 
     .checkout-shell {
-      width: min(980px, calc(100% - 48px));
+      width: min(1120px, calc(100% - 48px));
       margin: 0 auto;
       text-align: center;
     }
@@ -619,20 +631,270 @@
 
     .checkout-subtitle {
       margin: 18px auto 0;
-      max-width: 1220px;
+      max-width: 760px;
       font-size: clamp(0.88rem, 1.18vw, 1.02rem);
-      line-height: 1.34;
+      line-height: 1.5;
       color: #70788d;
     }
 
-    .cart-mockup {
-      width: min(560px, 100%);
-      margin: 42px auto 0;
-      background: #fff;
-      border: 1px solid #ddd9d3;
-      border-radius: 20px;
+    .checkout-ui {
+      margin-top: 42px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid #e7e1d8;
+      border-radius: 28px;
+      box-shadow: 0 28px 60px rgba(80, 62, 44, 0.12);
       overflow: hidden;
-      box-shadow: 0 12px 26px rgba(80, 62, 44, 0.1);
+      text-align: left;
+    }
+
+    .checkout-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+      background: #fdfcfa;
+      border-bottom: 1px solid #ece5db;
+    }
+
+    .checkout-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .checkout-bag {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: #2d2a27;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .checkout-brand-title {
+      margin: 0;
+      font-size: 0.92rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8a7b6b;
+      font-weight: 700;
+    }
+
+    .checkout-brand-copy {
+      margin: 2px 0 0;
+      font-size: 0.92rem;
+      color: #5f6777;
+    }
+
+    .checkout-topbar-note {
+      font-size: 0.88rem;
+      color: #7b8496;
+      white-space: nowrap;
+    }
+
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    }
+
+    .checkout-main {
+      padding: 30px 28px 32px;
+      background: #fff;
+      border-right: 1px solid #ece5db;
+    }
+
+    .checkout-summary {
+      padding: 30px 28px 32px;
+      background: #fbfaf8;
+    }
+
+    .checkout-step {
+      margin-bottom: 22px;
+    }
+
+    .checkout-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .checkout-step-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .checkout-step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #2d2a27;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .checkout-step-title {
+      margin: 0;
+      font-size: 1.08rem;
+      color: #243047;
+      font-weight: 700;
+    }
+
+    .checkout-card {
+      border: 1px solid #e7dfd3;
+      border-radius: 18px;
+      background: #fffdfa;
+      padding: 18px;
+      box-shadow: 0 8px 22px rgba(76, 58, 39, 0.04);
+    }
+
+    .checkout-card + .checkout-card {
+      margin-top: 12px;
+    }
+
+    .checkout-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .checkout-field {
+      border: 1px solid #ddd5ca;
+      border-radius: 12px;
+      background: #fff;
+      padding: 13px 14px;
+      font-size: 0.94rem;
+      color: #3d4553;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    .checkout-field.full {
+      margin-top: 12px;
+    }
+
+    .checkout-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid #eee7dd;
+    }
+
+    .checkout-option:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .checkout-option:last-child {
+      padding-bottom: 0;
+    }
+
+    .checkout-option-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .checkout-radio {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      border-radius: 999px;
+      border: 1px solid #cfc4b6;
+      position: relative;
+      background: #fff;
+      flex: 0 0 18px;
+    }
+
+    .checkout-radio.active::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 999px;
+      background: #2d2a27;
+    }
+
+    .checkout-option-title {
+      margin: 0;
+      font-size: 0.97rem;
+      color: #253047;
+      font-weight: 700;
+    }
+
+    .checkout-option-copy {
+      margin: 4px 0 0;
+      font-size: 0.9rem;
+      color: #727a8d;
+    }
+
+    .checkout-option-price {
+      font-size: 0.96rem;
+      color: #253047;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .payment-icons span {
+      min-width: 52px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid #e4dccf;
+      font-size: 0.8rem;
+      color: #5f6777;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .checkout-cta {
+      width: 100%;
+      margin-top: 18px;
+      border: 0;
+      border-radius: 14px;
+      background: #2d2a27;
+      color: #fff;
+      padding: 15px 18px;
+      font: inherit;
+      font-size: 0.96rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 14px 24px rgba(45, 42, 39, 0.16);
+    }
+
+    .checkout-cta:hover {
+      background: #211f1d;
+    }
+
+    .summary-kicker {
+      margin: 0 0 18px;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8d7f6d;
+      font-weight: 700;
+    }
+
+    .cart-mockup {
+      border: 1px solid #e5ddd0;
+      border-radius: 22px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 14px 28px rgba(80, 62, 44, 0.08);
       text-align: left;
     }
 
@@ -641,12 +903,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 24px;
+      padding: 18px 22px;
       background: #fcfbf8;
     }
 
     .cart-head {
-      border-bottom: 1px solid #e5e0d8;
+      border-bottom: 1px solid #ece5db;
     }
 
     .cart-head strong,
@@ -660,25 +922,25 @@
     }
 
     .cart-body {
-      padding: 18px 24px 22px;
+      padding: 22px 22px 24px;
     }
 
     .cart-product {
       display: grid;
       grid-template-columns: 76px 1fr auto;
-      gap: 16px;
+      gap: 18px;
       align-items: center;
     }
 
     .cart-product-thumb {
-      width: 76px;
-      height: 76px;
+      width: 84px;
+      height: 84px;
       border-radius: 14px;
-      background: linear-gradient(145deg, #b35d14 0%, #93440f 100%);
+      background: #fff;
       overflow: hidden;
       display: grid;
       place-items: center;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+      box-shadow: inset 0 0 0 1px #e8dfd3;
     }
 
     .cart-product-thumb img {
@@ -707,79 +969,119 @@
       color: #253047;
       font-weight: 700;
       white-space: nowrap;
+      justify-self: end;
     }
 
     .cart-divider {
       height: 1px;
       background: #ece6dd;
-      margin: 18px 0;
+      margin: 22px 0;
+    }
+
+    .pairing-section-label {
+      margin: 0 0 12px;
+      color: #8d7f6d;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .pairing-card {
-      border: 2px solid #d8cdc0;
-      border-left: 6px solid #604632;
+      border: 1px solid #e8dfd3;
       border-radius: 18px;
-      background: #fffdfa;
-      padding: 16px 18px;
-      box-shadow: 0 6px 14px rgba(82, 64, 44, 0.05);
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 14px 28px rgba(82, 64, 44, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .pairing-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(82, 64, 44, 0.1);
+      border-color: #d9cbb9;
     }
 
     .pairing-head {
-      display: flex;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 14px;
       align-items: flex-start;
     }
 
     .pairing-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
       background: #604632;
       color: #fff9ef;
       display: grid;
       place-items: center;
       font-family: "Iowan Old Style", Georgia, serif;
-      font-size: 1.2rem;
-      flex: 0 0 48px;
+      font-size: 1.35rem;
+      flex: 0 0 58px;
+    }
+
+    .pairing-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .pairing-label {
-      margin: 2px 0 8px;
-      color: #55402f;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
+      margin: 2px 0 10px;
+      color: #7f7264;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       font-weight: 700;
+      text-transform: uppercase;
     }
 
     .pairing-title {
       margin: 0;
       font-family: "Iowan Old Style", Georgia, serif;
-      font-size: clamp(1.02rem, 1.35vw, 1.28rem);
+      font-size: clamp(1.16rem, 1.45vw, 1.42rem);
       line-height: 1.08;
       color: #2c2f3d;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .pairing-copy {
+      margin: 10px 0 0;
+      color: #6e7688;
+      font-size: clamp(0.84rem, 0.98vw, 0.92rem);
+      line-height: 1.55;
+    }
+
+    .pairing-proof {
       margin: 8px 0 0;
-      color: #727a8d;
-      font-size: clamp(0.82rem, 0.96vw, 0.9rem);
-      font-style: italic;
+      color: #7d6854;
+      font-size: 0.84rem;
+      font-weight: 600;
     }
 
     .pairing-btn {
       display: block;
-      width: min(360px, 100%);
-      margin: 16px 0 0 auto;
+      width: 100%;
+      margin: 18px 0 0;
       border: 0;
       border-radius: 12px;
-      background: #604632;
+      background: #2d2a27;
       color: #fff;
-      padding: 12px 16px;
+      padding: 14px 16px;
       font: inherit;
-      font-size: clamp(0.86rem, 1vw, 0.96rem);
-      font-weight: 600;
+      font-size: clamp(0.9rem, 1.02vw, 0.98rem);
+      font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 12px 24px rgba(45, 42, 39, 0.14);
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    }
+
+    .pairing-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px rgba(45, 42, 39, 0.18);
+      filter: brightness(1.04);
     }
 
     .cart-foot {
@@ -799,259 +1101,17 @@
       color: #99a0ad;
     }
 
-    /* Merchant Dashboard */
-    .merchant-dashboard {
-      background: #2d2c2b;
-      padding: 88px 0 96px;
-      color: #fff;
+    .cart-total-line {
+      margin-top: 4px;
+      padding-top: 12px;
+      border-top: 1px solid #ece6dd;
     }
 
-    .merchant-shell {
-      width: min(1280px, calc(100% - 48px));
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .merchant-title {
-      margin: 0;
-      font-size: clamp(2.45rem, 4vw, 3.9rem);
-      line-height: 1;
-      font-weight: 600;
-      color: #fbf7f1;
-      letter-spacing: -0.035em;
-    }
-
-    .merchant-subtitle {
-      margin: 20px auto 0;
-      max-width: 900px;
-      color: #9ea3ae;
-      font-size: clamp(1rem, 1.8vw, 1.35rem);
-      line-height: 1.4;
-    }
-
-    .portal-frame {
-      margin: 56px auto 0;
-      background: #fbfaf8;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
-      text-align: left;
-    }
-
-    .portal-topbar {
-      background: #121c34;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 18px 28px;
-    }
-
-    .portal-brand,
-    .portal-user {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .portal-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: #6a4d34;
-      color: #fff7ec;
-      display: grid;
-      place-items: center;
-      font-family: "Iowan Old Style", Georgia, serif;
-      font-size: 1.35rem;
-    }
-
-    .portal-brand strong {
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .portal-store {
-      color: rgba(255,255,255,0.62);
-      font-size: 0.95rem;
-    }
-
-    .portal-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.16);
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .portal-body {
-      padding: 26px;
-      background: #fbfaf8;
-    }
-
-    .portal-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .portal-stat,
-    .portal-chart,
-    .portal-table {
-      background: #f7f5f1;
-      border-radius: 20px;
-      border: 1px solid #f0ece5;
-    }
-
-    .portal-stat {
-      padding: 22px 26px;
-    }
-
-    .portal-stat-label {
-      color: #778096;
-      font-size: 0.86rem;
-      letter-spacing: 0.05em;
-    }
-
-    .portal-stat-value {
-      margin-top: 8px;
-      font-size: 2rem;
-      line-height: 1;
-      color: #2f3137;
-      font-weight: 700;
-    }
-
-    .portal-stat-note {
-      margin-top: 8px;
-      color: #9aa2b1;
-      font-size: 0.82rem;
-    }
-
-    .portal-stat-note.positive {
-      color: #1dab52;
-    }
-
-    .portal-chart {
-      margin-top: 20px;
-      padding: 22px 24px 18px;
-    }
-
-    .portal-chart-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 18px;
-    }
-
-    .portal-chart-head h3 {
-      margin: 0;
-      font-size: 1rem;
-      color: #283244;
-    }
-
-    .portal-tabs {
-      display: flex;
-      gap: 8px;
-    }
-
-    .portal-tab {
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: #fff;
-      color: #7c8495;
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-
-    .portal-tab.active {
-      color: #2b3448;
-    }
-
-    .portal-bars {
-      height: 230px;
-      display: flex;
-      align-items: flex-end;
-      gap: 12px;
-    }
-
-    .portal-bar-group {
-      flex: 1 1 0;
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      height: 100%;
-    }
-
-    .portal-bar {
-      flex: 1 1 0;
-      background: #d5d1cf;
-      border-radius: 8px 8px 0 0;
-    }
-
-    .portal-months {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      margin-top: 12px;
-      color: #9aa2b1;
+    .cart-reassurance {
+      grid-column: 1 / -1;
+      margin-top: 2px;
+      color: #8b8190;
       font-size: 0.8rem;
-    }
-
-    .portal-table {
-      margin-top: 20px;
-      overflow: hidden;
-    }
-
-    .portal-table-row {
-      display: grid;
-      grid-template-columns: 1.1fr 1.1fr 1.5fr 1.4fr 0.9fr 1.4fr;
-      gap: 16px;
-      align-items: center;
-      padding: 18px 24px;
-      color: #31343a;
-      border-top: 1px solid #ebe5db;
-    }
-
-    .portal-table-row.header {
-      color: #798195;
-      font-weight: 700;
-      border-top: 0;
-      background: rgba(255,255,255,0.45);
-    }
-
-    .portal-revenue {
-      color: #1dab52;
-      font-weight: 700;
-    }
-
-    .portal-revenue.muted {
-      color: #9aa2b1;
-      font-weight: 500;
-    }
-
-    .portal-status {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .portal-status.fulfilled {
-      background: #dff7e7;
-      color: #1b944c;
-    }
-
-    .portal-status.empty {
-      background: #eef1f5;
-      color: #6f7789;
     }
 
     /* Developer Friendly */
@@ -1217,6 +1277,13 @@
       font-weight: 600;
       color: #26262b;
       letter-spacing: -0.035em;
+    }
+
+    .client-subtitle {
+      margin: 14px auto 0;
+      max-width: 760px;
+      font-size: clamp(0.96rem, 1.26vw, 1.08rem);
+      color: var(--muted);
     }
 
     .client-groups {
@@ -1511,14 +1578,6 @@
         gap: 26px;
       }
 
-      .portal-stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .portal-table-row {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
       .client-groups {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1576,27 +1635,28 @@
       }
 
       .checkout-shell {
-        width: min(100% - 32px, 980px);
+        width: min(calc(100% - 32px), 980px);
       }
 
-      .merchant-dashboard {
-        padding: 70px 0 78px;
+      .checkout-layout {
+        grid-template-columns: 1fr;
       }
 
-      .merchant-shell {
-        width: min(100% - 32px, 1280px);
+      .checkout-main {
+        border-right: 0;
+        border-bottom: 1px solid #ece5db;
       }
 
-      .portal-topbar {
-        padding: 16px 18px;
-        flex-wrap: wrap;
+      .checkout-topbar {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .portal-body {
-        padding: 18px;
+      .checkout-topbar-note {
+        white-space: normal;
       }
 
-      .portal-stats {
+      .checkout-field-row {
         grid-template-columns: 1fr;
       }
 
@@ -1609,7 +1669,7 @@
       }
 
       .client-shell {
-        width: min(100% - 32px, 1240px);
+        width: min(calc(100% - 32px), 1240px);
       }
 
       .client-groups {
@@ -1690,29 +1750,6 @@
 
       .api-code {
         font-size: 0.88rem;
-      }
-
-      .portal-chart {
-        padding: 18px 16px 16px;
-      }
-
-      .portal-bars {
-        height: 150px;
-        gap: 8px;
-      }
-
-      .portal-bar-group {
-        gap: 6px;
-      }
-
-      .portal-table-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 14px 16px;
-      }
-
-      .portal-table-row.header {
-        display: none;
       }
 
       .footer-bottom {
@@ -1872,8 +1909,7 @@
         <div class="hero-copy">
           <h1 class="serif">Online purchases are better with chocolate.</h1>
 
-          <p class="hero-sub">We connect terroir Chocolate directly to your digital channels (e-commerce, hospitality, CRM…).</p>
-          <p class="hero-sub">A complete technological and logistical infrastructure to sell or gift the exceptional.</p>
+          <p class="hero-sub">We integrate premium chocolate directly to your digital channels. A complete technological and logistical infrastructure to sell or gift the exceptional.</p>
           <p class="hero-sub">No stock management. No friction. Just emotion.</p>
 
           <a class="btn" href="#solution">DISCOVER THE SOLUTION</a>
@@ -1886,6 +1922,7 @@
     <!-- 3 CATEGORIES UNDER HERO -->
     <section class="three-cats">
       <div class="container">
+        <h2 class="three-cats-title serif">The Ultimate Upsell for Your Industry.</h2>
         <div class="three-cats-grid">
           <article class="cat-item">
             <div class="cat-icon">🍷</div>
@@ -2024,185 +2061,153 @@
     <section class="checkout-showcase">
       <div class="checkout-shell">
         <h2 class="checkout-title serif">Seamless Checkout Experience</h2>
-        <p class="checkout-subtitle">XOCOA integrates directly into the cart with an intelligent sommelier-powered pairing recommendation.</p>
+        <p class="checkout-subtitle">XOCOA integrates directly into the checkout with a polished pairing layer that feels native, trusted, and ready to convert.</p>
 
-        <div class="cart-mockup">
-          <div class="cart-head">
-            <strong>Your Cart</strong>
-            <span>1 item</span>
-          </div>
-
-          <div class="cart-body">
-            <div class="cart-product">
-              <div class="cart-product-thumb">
-                <img src="rum.png" alt="Aged Rum XO bottle">
-              </div>
-
+        <div class="checkout-ui">
+          <div class="checkout-topbar">
+            <div class="checkout-brand">
+              <div class="checkout-bag">X</div>
               <div>
-                <h3 class="cart-product-title">Aged Rum XO</h3>
-                <div class="cart-product-meta">750ml • 42% ABV</div>
+                <p class="checkout-brand-title">Shopify Checkout</p>
+                <p class="checkout-brand-copy">Express purchase flow with XOCOA pairing built into the order journey.</p>
               </div>
-
-              <div class="cart-price">€120</div>
             </div>
-
-            <div class="cart-divider"></div>
-
-            <div class="pairing-card">
-              <div class="pairing-head">
-                <div class="pairing-badge">X</div>
-
-                <div>
-                  <div class="pairing-label">XOCOA SOMMELIER PAIRING</div>
-                  <h3 class="pairing-title">72% Grand Cru Chocolate</h3>
-                  <p class="pairing-copy">Perfect match for aged rum • Woody &amp; spicy notes</p>
-                </div>
-              </div>
-
-              <button class="pairing-btn" type="button">Add Sommelier Pairing +€8</button>
-            </div>
+            <div class="checkout-topbar-note">Secure checkout • Shipping and payment confirmed in one flow</div>
           </div>
 
-          <div class="cart-foot">
-            <div class="cart-foot-label">Subtotal</div>
-            <div class="cart-foot-value">€120</div>
-            <div class="cart-foot-label cart-foot-muted">Shipping</div>
-            <div class="cart-foot-value cart-foot-muted">Calculated at checkout</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MERCHANT DASHBOARD -->
-    <section class="merchant-dashboard">
-      <div class="merchant-shell">
-        <h2 class="merchant-title serif">Merchant Dashboard</h2>
-        <p class="merchant-subtitle">Track ancillary revenue and XOCOA-fulfilled orders in one place.</p>
-
-        <div class="portal-frame">
-          <div class="portal-topbar">
-            <div class="portal-brand">
-              <div class="portal-mark">X</div>
-              <strong>XOCOA Merchant Portal</strong>
-            </div>
-
-            <div class="portal-user">
-              <div class="portal-store">premium_wine_store_01</div>
-              <div class="portal-avatar">JD</div>
-            </div>
-          </div>
-
-          <div class="portal-body">
-            <div class="portal-stats">
-              <article class="portal-stat">
-                <div class="portal-stat-label">ANCILLARY REVENUE</div>
-                <div class="portal-stat-value">€4,820</div>
-                <div class="portal-stat-note positive">+12% this month</div>
-              </article>
-
-              <article class="portal-stat">
-                <div class="portal-stat-label">TOTAL ORDERS</div>
-                <div class="portal-stat-value">142</div>
-                <div class="portal-stat-note">XOCOA fulfilled</div>
-              </article>
-
-              <article class="portal-stat">
-                <div class="portal-stat-label">AVG PAIRING VALUE</div>
-                <div class="portal-stat-value">€9</div>
-                <div class="portal-stat-note">per order</div>
-              </article>
-
-              <article class="portal-stat">
-                <div class="portal-stat-label">CONVERSION</div>
-                <div class="portal-stat-value">22%</div>
-                <div class="portal-stat-note">pairing acceptance</div>
-              </article>
-            </div>
-
-            <div class="portal-chart">
-              <div class="portal-chart-head">
-                <h3>Revenue Trend</h3>
-                <div class="portal-tabs">
-                  <div class="portal-tab">7D</div>
-                  <div class="portal-tab active">30D</div>
-                  <div class="portal-tab">90D</div>
+          <div class="checkout-layout">
+            <div class="checkout-main">
+              <div class="checkout-step">
+                <div class="checkout-step-head">
+                  <div class="checkout-step-number">1</div>
+                  <h3 class="checkout-step-title">Contact</h3>
+                </div>
+                <div class="checkout-card">
+                  <div class="checkout-field-row">
+                    <div class="checkout-field">contact@client.com</div>
+                    <div class="checkout-field">+33 6 00 00 00 00</div>
+                  </div>
                 </div>
               </div>
 
-              <div class="portal-bars" aria-hidden="true">
-                <div class="portal-bar-group">
-                  <div class="portal-bar" style="height: 32%;"></div>
-                  <div class="portal-bar" style="height: 42%;"></div>
+              <div class="checkout-step">
+                <div class="checkout-step-head">
+                  <div class="checkout-step-number">2</div>
+                  <h3 class="checkout-step-title">Delivery</h3>
                 </div>
-                <div class="portal-bar-group">
-                  <div class="portal-bar" style="height: 27%;"></div>
-                  <div class="portal-bar" style="height: 54%;"></div>
-                </div>
-                <div class="portal-bar-group">
-                  <div class="portal-bar" style="height: 68%;"></div>
-                  <div class="portal-bar" style="height: 60%;"></div>
-                </div>
-                <div class="portal-bar-group">
-                  <div class="portal-bar" style="height: 78%;"></div>
-                  <div class="portal-bar" style="height: 66%;"></div>
-                </div>
-                <div class="portal-bar-group">
-                  <div class="portal-bar" style="height: 88%;"></div>
-                  <div class="portal-bar" style="height: 82%;"></div>
-                </div>
-                <div class="portal-bar-group">
-                  <div class="portal-bar" style="height: 94%;"></div>
-                  <div class="portal-bar" style="height: 100%;"></div>
+                <div class="checkout-card">
+                  <div class="checkout-field-row">
+                    <div class="checkout-field">Jean Dubois</div>
+                    <div class="checkout-field">24 Rue du Bac</div>
+                  </div>
+                  <div class="checkout-field full">75007 Paris, France</div>
+                  <div class="checkout-option">
+                    <div class="checkout-option-main">
+                      <div class="checkout-radio active"></div>
+                      <div>
+                        <p class="checkout-option-title">Standard delivery</p>
+                        <p class="checkout-option-copy">Climate-controlled shipping arranged by XOCOA.</p>
+                      </div>
+                    </div>
+                    <div class="checkout-option-price">Free</div>
+                  </div>
+                  <div class="checkout-option">
+                    <div class="checkout-option-main">
+                      <div class="checkout-radio"></div>
+                      <div>
+                        <p class="checkout-option-title">White-glove gifting note</p>
+                        <p class="checkout-option-copy">Add a handwritten message to the chocolate parcel.</p>
+                      </div>
+                    </div>
+                    <div class="checkout-option-price">+€4</div>
+                  </div>
                 </div>
               </div>
 
-              <div class="portal-months">
-                <span>Jan</span>
-                <span>Feb</span>
-                <span>Mar</span>
-                <span>Apr</span>
-                <span>May</span>
-                <span>Jun</span>
+              <div class="checkout-step">
+                <div class="checkout-step-head">
+                  <div class="checkout-step-number">3</div>
+                  <h3 class="checkout-step-title">Payment</h3>
+                </div>
+                <div class="checkout-card">
+                  <div class="checkout-option">
+                    <div class="checkout-option-main">
+                      <div class="checkout-radio active"></div>
+                      <div>
+                        <p class="checkout-option-title">Credit card</p>
+                        <p class="checkout-option-copy">Trusted payment flow matching your storefront.</p>
+                      </div>
+                    </div>
+                    <div class="checkout-option-price">Secure</div>
+                  </div>
+                  <div class="payment-icons" aria-hidden="true">
+                    <span>Visa</span>
+                    <span>MC</span>
+                    <span>Amex</span>
+                    <span>Shop Pay</span>
+                  </div>
+                  <button class="checkout-cta" type="button">Pay now</button>
+                </div>
               </div>
             </div>
 
-            <div class="portal-table">
-              <div class="portal-table-row header">
-                <div>Order ID</div>
-                <div>Customer</div>
-                <div>Product</div>
-                <div>Pairing</div>
-                <div>Revenue</div>
-                <div>Status</div>
-              </div>
+            <aside class="checkout-summary">
+              <p class="summary-kicker">Order Summary</p>
+              <div class="cart-mockup">
+                <div class="cart-head">
+                  <strong>Your Cart</strong>
+                  <span>2 items</span>
+                </div>
 
-              <div class="portal-table-row">
-                <div>#ORD–2847</div>
-                <div>M. Dubois</div>
-                <div>Aged Rum XO</div>
-                <div>72% Grand Cru</div>
-                <div class="portal-revenue">+€8</div>
-                <div><span class="portal-status fulfilled">Fulfilled by XOCOA</span></div>
-              </div>
+                <div class="cart-body">
+                  <div class="cart-product">
+                    <div class="cart-product-thumb">
+                      <img src="rum_xp.jpg" alt="Aged Rum XO bottle">
+                    </div>
 
-              <div class="portal-table-row">
-                <div>#ORD–2846</div>
-                <div>S. Martin</div>
-                <div>Chateau Margaux</div>
-                <div>85% Venezuela</div>
-                <div class="portal-revenue">+€10</div>
-                <div><span class="portal-status fulfilled">Fulfilled by XOCOA</span></div>
-              </div>
+                    <div>
+                      <h3 class="cart-product-title">Aged Rum XO</h3>
+                      <div class="cart-product-meta">750ml • 42% ABV</div>
+                    </div>
 
-              <div class="portal-table-row">
-                <div>#ORD–2845</div>
-                <div>L. Bernard</div>
-                <div>Cohiba Robusto</div>
-                <div>—</div>
-                <div class="portal-revenue muted">—</div>
-                <div><span class="portal-status empty">No pairing</span></div>
+                    <div class="cart-price">€120</div>
+                  </div>
+
+                  <div class="cart-divider"></div>
+
+                  <p class="pairing-section-label">Recommended for your selection</p>
+                  <div class="pairing-card">
+                    <div class="pairing-head">
+                      <div class="pairing-badge">
+                        <img src="chocolate.png" alt="72% Grand Cru Chocolate">
+                      </div>
+
+                      <div>
+                        <div class="pairing-label">Selected for your rum</div>
+                        <h3 class="pairing-title">72% Grand Cru Chocolate</h3>
+                        <p class="pairing-copy">Enhances woody &amp; spicy notes of aged rum</p>
+                        <p class="pairing-proof">Recommended by our sommeliers</p>
+                      </div>
+                    </div>
+
+                    <button class="pairing-btn" id="pairingBtn" type="button" aria-pressed="false">Add pairing +€8</button>
+                    <p class="pairing-copy" id="pairingHint">Only added if you select this option</p>
+                  </div>
+
+                  <div class="cart-divider"></div>
+                </div>
+
+                <div class="cart-foot">
+                  <div class="cart-foot-label">Subtotal</div>
+                  <div class="cart-foot-value cart-total-line" id="subtotalValue">€120</div>
+                  <div class="cart-foot-label cart-foot-muted">Shipping</div>
+                  <div class="cart-foot-value cart-foot-muted">Free</div>
+                  <div class="cart-foot-label cart-total-line">Total</div>
+                  <div class="cart-foot-value" id="totalValue">€120</div>
+                  <div class="cart-reassurance">Secure checkout • Taxes included</div>
+                </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </div>
@@ -2253,7 +2258,8 @@
     <!-- CLIENT CATEGORIES -->
     <section class="client-categories">
       <div class="client-shell">
-        <h2 class="client-title serif">Enriching Customer Experience for:</h2>
+        <h2 class="client-title serif">The Ultimate Upsell for Your Industry.</h2>
+        <p class="client-subtitle">Enriching Customer Experience for:</p>
 
         <div class="client-groups">
           <article class="client-group">
@@ -2372,10 +2378,45 @@
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const mobileNav = document.getElementById("mobileNav");
+    const pairingBtn = document.getElementById("pairingBtn");
+    const pairingHint = document.getElementById("pairingHint");
+    const subtotalValue = document.getElementById("subtotalValue");
+    const totalValue = document.getElementById("totalValue");
 
     menuBtn.addEventListener("click", () => {
       mobileNav.classList.toggle("open");
     });
+
+    if (pairingBtn && subtotalValue && totalValue) {
+      const basePrice = 120;
+      const pairingPrice = 8;
+      let pairingAdded = false;
+
+      const formatPrice = (value) => `€${value}`;
+
+      const syncSummary = () => {
+        const nextTotal = basePrice + (pairingAdded ? pairingPrice : 0);
+        subtotalValue.textContent = formatPrice(nextTotal);
+        totalValue.textContent = formatPrice(nextTotal);
+        pairingBtn.textContent = pairingAdded ? "Added to order" : "Add pairing +€8";
+        pairingBtn.setAttribute("aria-pressed", String(pairingAdded));
+        pairingBtn.disabled = pairingAdded;
+
+        if (pairingHint) {
+          pairingHint.textContent = pairingAdded
+            ? "Pairing added to this order"
+            : "Only added if you select this option";
+        }
+      };
+
+      pairingBtn.addEventListener("click", () => {
+        if (pairingAdded) return;
+        pairingAdded = true;
+        syncSummary();
+      });
+
+      syncSummary();
+    }
   </script>
 </body>
 </html>
