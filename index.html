@@ -1590,19 +1590,52 @@
       text-transform: uppercase;
     }
 
+    .sommelier-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .sommelier-cta-lead {
+      color: rgba(93, 82, 74, 0.72);
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
     .sommelier-open-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 22px;
+      gap: 10px;
+      padding: 17px 28px;
       border-radius: 999px;
-      background: #2d2723;
+      border: 1px solid rgba(54, 45, 40, 0.1);
+      background: linear-gradient(135deg, #2f2824 0%, #43372f 100%);
       color: #fff;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      box-shadow: 0 16px 30px rgba(45, 39, 35, 0.18);
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      box-shadow: 0 16px 30px rgba(45, 39, 35, 0.2), 0 4px 10px rgba(45, 39, 35, 0.1);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+    }
+
+    .sommelier-open-btn::after {
+      content: "\2192";
+      font-size: 1rem;
+      transition: transform 0.24s ease;
+    }
+
+    .sommelier-open-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 22px 38px rgba(45, 39, 35, 0.24), 0 8px 16px rgba(45, 39, 35, 0.12);
+    }
+
+    .sommelier-open-btn:hover::after {
+      transform: translateX(3px);
     }
 
     .sommelier-loading[hidden],
@@ -2732,7 +2765,10 @@
                     </div>
                   </div>
 
-                  <a class="sommelier-open-btn" href="https://xocoa.co/" target="_blank" rel="noopener noreferrer">Open the Chocolate Sommelier AI</a>
+                  <div class="sommelier-cta">
+                    <div class="sommelier-cta-lead">Experience it live &#8594;</div>
+                    <a class="sommelier-open-btn" href="https://xocoa.co/" target="_blank" rel="noopener noreferrer">Discover your perfect pairing</a>
+                  </div>
                 </div>
               </div>
             </div>
