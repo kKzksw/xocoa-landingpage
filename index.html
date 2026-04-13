@@ -1443,13 +1443,17 @@
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #5b4638, #8f6f58);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 700;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+      overflow: hidden;
+      flex: 0 0 42px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(91, 70, 56, 0.12);
+    }
+
+    .sommelier-frame-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
 
     .sommelier-frame-label {
@@ -1544,17 +1548,19 @@
       margin: 22px 0;
       padding: 20px;
       border-radius: 22px;
-      background: #fbf7f1;
-      border: 1px solid #ede4d8;
+      background: #fbfaf6;
+      border: 2px solid rgba(38, 142, 128, 0.78);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.72);
     }
 
     .sommelier-chat-bubble {
-      max-width: 88%;
-      padding: 16px 18px;
-      border-radius: 20px 20px 20px 8px;
-      background: linear-gradient(135deg, #4b3830, #6a4f42);
-      color: #fff;
-      box-shadow: 0 16px 32px rgba(75, 56, 48, 0.18);
+      max-width: 100%;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.96);
+      border: 2px solid rgba(38, 142, 128, 0.78);
+      color: #25292a;
+      box-shadow: 0 10px 22px rgba(38, 142, 128, 0.08);
       font-size: 0.98rem;
       line-height: 1.55;
     }
@@ -1564,15 +1570,17 @@
       align-items: center;
       gap: 12px;
       margin-top: 16px;
+      margin-left: 42px;
+      width: calc(100% - 42px);
       padding: 12px;
       border-radius: 18px;
-      border: 1px solid #ebdfd0;
+      border: 2px solid rgba(38, 142, 128, 0.32);
       background: #fff;
     }
 
     .sommelier-chat-input span {
       flex: 1;
-      color: #9b948f;
+      color: #8f958f;
       font-size: 0.95rem;
     }
 
@@ -1582,12 +1590,13 @@
       justify-content: center;
       padding: 11px 16px;
       border-radius: 999px;
-      background: #2c2724;
+      background: linear-gradient(135deg, #218e80, #3ca491);
       color: #fff;
       font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      box-shadow: 0 10px 18px rgba(38, 142, 128, 0.18);
     }
 
     .sommelier-cta {
@@ -1612,13 +1621,13 @@
       gap: 10px;
       padding: 17px 28px;
       border-radius: 999px;
-      border: 1px solid rgba(54, 45, 40, 0.1);
-      background: linear-gradient(135deg, #2f2824 0%, #43372f 100%);
+      border: 1px solid rgba(33, 142, 128, 0.18);
+      background: linear-gradient(135deg, #218e80 0%, #3ca491 100%);
       color: #fff;
       font-size: 0.92rem;
       font-weight: 800;
       letter-spacing: 0.01em;
-      box-shadow: 0 16px 30px rgba(45, 39, 35, 0.2), 0 4px 10px rgba(45, 39, 35, 0.1);
+      box-shadow: 0 16px 30px rgba(33, 142, 128, 0.2), 0 4px 10px rgba(33, 142, 128, 0.1);
       transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
     }
 
@@ -1631,7 +1640,7 @@
     .sommelier-open-btn:hover {
       transform: translateY(-2px);
       filter: brightness(1.05);
-      box-shadow: 0 22px 38px rgba(45, 39, 35, 0.24), 0 8px 16px rgba(45, 39, 35, 0.12);
+      box-shadow: 0 22px 38px rgba(33, 142, 128, 0.24), 0 8px 16px rgba(33, 142, 128, 0.12);
     }
 
     .sommelier-open-btn:hover::after {
@@ -2727,7 +2736,9 @@
           <div class="sommelier-frame-shell" data-sommelier-shell>
             <div class="sommelier-frame-topbar">
               <div class="sommelier-frame-brand">
-                <div class="sommelier-frame-mark">XO</div>
+                <div class="sommelier-frame-mark">
+                  <img src="LOGO_SOMMELIER_FOND_BLANC_COULEURS.png" alt="Chocolate Sommelier logo" />
+                </div>
                 <div class="sommelier-frame-label">
                   <strong>Chocolate Sommelier AI</strong>
                   <span>Conversational chocolate guidance powered by XOCOA</span>
@@ -2767,7 +2778,7 @@
 
                   <div class="sommelier-cta">
                     <div class="sommelier-cta-lead">Experience it live &#8594;</div>
-                    <a class="sommelier-open-btn" href="https://xocoa.co/" target="_blank" rel="noopener noreferrer">Discover your perfect pairing</a>
+                    <a class="sommelier-open-btn" href="https://xocoa.co/" target="_blank" rel="noopener noreferrer">click here to discover perfect paring</a>
                   </div>
                 </div>
               </div>
